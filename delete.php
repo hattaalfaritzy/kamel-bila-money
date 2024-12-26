@@ -8,7 +8,7 @@ if(isset($_GET['id'])){
 
     if (mysqli_query($conn, $sql)) {
         echo "<script>alert('Record deleted successfully')
-        window.location.href='index.php';</script>";
+        window.location.href='income.php';</script>";
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
     }
