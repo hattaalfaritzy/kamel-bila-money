@@ -1,19 +1,6 @@
 <?php
 include('db.php');
 
-// Logika untuk input data
-if (isset($_POST['submit'])) {
-    $amount = mysqli_real_escape_string($conn, $_POST['amount']);
-    $source = mysqli_real_escape_string($conn, $_POST['source']);
-
-    $sql = "INSERT INTO tabungan (amount, source, type) VALUES ('$amount', '$source', 'Income')";
-    if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('New record created successfully'); window.location.href='income.php';</script>";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-}
-
 // Query untuk data grafik
 $sqlChart = "SELECT source, SUM(amount) as total_amount FROM tabungan WHERE type = 'Income' GROUP BY source";
 $result = mysqli_query($conn, $sqlChart);
@@ -29,9 +16,9 @@ ob_start();
 ?>
 
 <!-- Konten khusus untuk Income -->
-<form action="income.php" method="post">
+<form action="controllers/submit_income.php" method="post">
     <div>
-        <input type="text" name="amount" placeholder="Amount" required />
+        <input type="number" name="amount" placeholder="Amount" required min="0" />
         <select name="source" required>
             <option value="" selected disabled>Source</option>
             <option value="Salary">Salary</option>

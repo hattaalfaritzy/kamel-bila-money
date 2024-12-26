@@ -474,6 +474,17 @@ input[type="text"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+
+input[type="number"] {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 button {
   float: right;
   margin-left: 10px;
@@ -517,14 +528,4 @@ table th {
 }
 table th {
   background-color: #f2f2f2;
-}
-input[type="text"] {
-  width: 80%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: inline-block;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
 }
