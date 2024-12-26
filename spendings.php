@@ -35,20 +35,20 @@ ob_start();
     <?php if (empty($data)): ?>
         <p>No data available</p>
     <?php else: ?>
-      <div class="income-progress">
+      <div class="chart-progress">
       <?php
             $totalSpending = array_sum(array_column($data, 'total_amount'));
         ?>
         <span><?= number_format($totalSpending, 2) ?></span>
-        <canvas id="incomeChart" width="400" height="200"></canvas>
+        <canvas id="spendingChart" width="400" height="200"></canvas>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             // Mendeklarasikan data sekali
             const labels = <?= json_encode(array_column($data, 'source')) ?>;
             const dataValues = <?= json_encode(array_column($data, 'total_amount')) ?>;
 
-            const ctx = document.getElementById('incomeChart').getContext('2d');
-            const incomeChart = new Chart(ctx, {
+            const ctx = document.getElementById('spendingChart').getContext('2d');
+            const spendingChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
                     labels: labels,

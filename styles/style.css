@@ -427,7 +427,7 @@ body {
   display: block;
 }
 
-.income-progress {
+.chart-progress {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -435,13 +435,13 @@ body {
   height: 300px !important;
 }
 
-.income-progress canvas {
+.chart-progress canvas {
   width: 300px;
   height: 300px;
   display: block;
 }
 
-.income-progress span {
+.chart-progress span {
   position: absolute;
   display: flex;
   justify-content: center;

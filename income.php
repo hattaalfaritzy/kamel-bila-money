@@ -35,7 +35,7 @@ ob_start();
     <?php if (empty($data)): ?>
         <p>No data available</p>
     <?php else: ?>
-      <div class="income-progress">
+      <div class="chart-progress">
       <?php
             $totalIncome = array_sum(array_column($data, 'total_amount'));
         ?>
