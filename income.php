@@ -98,22 +98,24 @@ ob_start();
         </tr>
     </thead>
     <tbody>
-        <?php
+    <?php
         $sql = "SELECT * FROM tabungan WHERE type = 'Income'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr>
-                    <td>{$row['amount']}</td>
-                    <td>{$row['date']}</td>
-                    <td>{$row['source']}</td>
-                    <td><a href='delete.php?id={$row['id']}'>Delete</a></td>
-                    <td><a href='edit.php?id={$row['id']}'>Edit</a></td>
-                </tr>";
-            }
+        while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+        <tr>
+            <td><?php echo $row["amount"] ?></td>
+            <td><?php echo $row["date"] ?></td>
+            <td><?php echo $row["source"] ?></td>
+            <td><a href="controllers/delete.php?id=<?php echo $row["id"] ?>&redirect=../income.php">Delete</a></td>
+            <td><a href="edit.php?id=<?php echo $row["id"] ?>">Edit</a></td>
+        </tr>
+        <?php
+        }
         } else {
-            echo "<tr><td colspan='5'>No records found</td></tr>";
+        echo "0 results";
         }
         ?>
     </tbody>

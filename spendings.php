@@ -109,7 +109,7 @@ ob_start();
       <td><?php echo $row["amount"] ?></td>
       <td><?php echo $row["date"] ?></td>
       <td><?php echo $row["source"] ?></td>
-      <td><a href="delete.php?id=<?php echo $row["id"] ?>">Delete</a></td>
+      <td><a href="controllers/delete.php?id=<?php echo $row["id"] ?>&redirect=../spendings.php">Delete</a></td>
       <td><a href="edit.php?id=<?php echo $row["id"] ?>">Edit</a></td>
     </tr>
     <?php
